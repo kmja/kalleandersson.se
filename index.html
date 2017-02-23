@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Kalle Andersson: What A Guy</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" type="text/css" href="responsive.css">
+		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="konami.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="loader-wrapper-wrapper">
+			<div class="loader-wrapper">
+				<div class="loader-big">
+					<div class="loader-small"></div>
+				</div>
+			</div>
+		</div>
+
+		<img class="bg" id="bgStart" src="img/bgStart.png">
+		<img class="bg" id="bgMe" src="img/bgMe.jpg">
+		<img class="bg" id="bgWork" src="img/bgWork.png">
+		<img class="pottfrilla" src="img/pottfrilla.png">
+		<!-- <img class="cutout" src="cutout.png"> -->
+		
+		<div class="menu">
+			<h1 class="name noselect">Kalle Andersson</h1>
+			<svg>
+				<line x1="5%" y1="0%" x2="95%" y2="0%">
+			</svg>
+			<p class="links">
+				<span class="link me"><a href="#">me</a></span>
+				<span class="komma noselect">,</span> 
+				<span class="link work"><a href="#">my work</a></span> 
+				<span class="och noselect">and</span> 
+				<span class="link principles"><a href="https://en.wikipedia.org/wiki/Rule_of_three_(writing)">my principles</a></span>
+			</p>
+		</div>
+
+		<div class="content about">
+			<h2>Who Am I?</h2>
+			<!-- <p>Wow, you're just going straight for the hard-hitting questions, aren't you? Well, I'd love to tell you my life story, but you don't have all day and this div can only fit about 500 words. So I'll give you the abridged version.</p>
+			<p>My name is Karl, but not even my mother calls me that. There have even been times where I didn't respond to someone calling "Karl! KARL!" No, for all intents and purposes, I'm Kalle. Kalle Andersson.</p>
+			<p>I'm 23 years old and I live in Stockholm, Sweden. I'm in my last year at KTH, set to graduate from Media Technology this summer. Right now, I'm all about three things: sports, music, and school. I play football for KTH FC and I head the sports section at the Media Technology chapter at KTH. I play keyboard in an indie rock band comprised of fellow students. We're called Bear With Us - check us out on Spotify!</p>
+			<p>Last but not least: school, which is a lot of things. Like this site, for example! I hadn't done any programming before I started at KTH and now I can do all this cool stuff. Design is my passion, though - the programming is just a tool to bring my designs to reality.</p> -->
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis volutpat quis justo a egestas. Morbi vel commodo diam. Mauris ullamcorper mattis tellus id luctus. Donec vitae turpis vel neque varius pharetra. Donec sapien tortor, tempor nec risus id, tristique placerat diam. Mauris ut diam nec mauris sollicitudin ornare et condimentum quam. Quisque porttitor diam orci. Sed id eros sit amet odio sagittis sollicitudin quis nec lorem.</p>
+		</div>
+
+		<div class="content projects">
+			<div class="content project" id="ballz">
+				<div class="mask"></div>
+				<h2 class="title noselect">Ballz to the Wall</h2>
+				<div class="wrapper">
+					<div class="banner"></div>
+					<div class="quickFacts">
+						<div>
+							<ul class="heading">
+								<li>Date</li>
+								<li>Contributions</li>
+								<li>Tools</li>
+								<li>Timeframe</li>
+							</ul>
+							<ul class="answer">
+								<li>December 2015</li>
+								<li>Game Design</li>
+								<li>Unity, Kinect</li>
+								<li>4 Weeks</li>
+							</ul>
+						</div>
+						
+					</div>
+					<div class="description">
+						<h2>Description</h2>
+						<p>This is a Kinect-based game of virtual squash. Players use their bodies to control avatars and bounce a ball against their opponent. If you get the ball past your opponent, you get a point. First to 3 wins.</p>
+						<p>I learned a lot from this project. I had never worked with either the Kinect or Unity before, so it was a rough first week, but I came out of it knowing the basics of making a game in Unity. Considering the short timeframe and our lack of experience, I think we did a good job.</p>
+						<a href="https://www.youtube.com/watch?v=dyEV62oRnY8">Video of Ballz to the Wall</a>
+					</div>
+				</div>
+			</div>
+			<div class="content project" id="soundark">
+				<div class="mask"></div>
+				<h2 class="title noselect">SounDark</h2>
+				<div class="wrapper">
+					<div class="banner"></div>
+					<div class="quickFacts">
+						<div>
+							<ul class="heading">
+								<li>Date</li>
+								<li>Contributions</li>
+								<li>Tools</li>
+								<li>Timeframe</li>
+							</ul>
+							<ul class="answer">
+								<li>October 2016</li>
+								<li>3D Modeling</li>
+								<li>Blender, Unity</li>
+								<li>4 Weeks</li>
+							</ul>
+						</div>
+						
+					</div>
+					<div class="description">
+						<h2>Description</h2>
+						<p>SounDark is a virtual reality game made in Unity. You are a frightened little bird who has to flee the kitchens where evil chefs want to cook you. The twist: you can only see through sound. Speaking into a microphone on the virtual reality headset will emit visible sound waves, illuminating the world around you. But be careful - the chefs have ears, too...</p>
+						<p>In our team of 6, we all contributed to the game design and interaction, but my individual contributions were modeling and animating the game characters.</p>
+						<a href="https://hubris37.github.io/Sonar/">Project website</a>
+					</div>
+				</div>
+			</div>
+			<div class="content project" id="mtgn16">
+				<div class="mask"></div>
+				<h2 class="title noselect">Mottagningen</h2>
+				<div class="wrapper">
+					<div class="banner"></div>
+					<div class="quickFacts">
+						<div>
+							<ul class="heading">
+								<li>Date</li>
+								<li>Contributions</li>
+								<li>Tools</li>
+								<li>Timeframe</li>
+							</ul>
+							<ul class="answer">
+								<li>Summer 2016</li>
+								<li>Front-end</li>
+								<li>HTML/CSS/JS</li>
+								<li>3 months</li>
+							</ul>
+						</div>
+						
+					</div>
+					<div class="description">
+						<h2>Description</h2>
+						<p>I was part of the reception of newly admitted students at Media Technology, my program at KTH. I did some photo and video production, but my main area of responsibility was helping with creating and maintaining the reception website. There, I did graphic design and front-end development, working mostly in HTML/CSS/JS and a bit of PHP.</p>
+						<p>My main learnings from this project was about working in large groups over long periods of time (preparing for the reception), as well as working very closely and intensely (during it).</p>
+						<a href="http://mtgn.nu">The website (if you're reading this after the summer of 2017, it's probably changed)</a>
+					</div>
+				</div>
+			</div>
+			<div class="content project" id="clickipedia">
+				<div class="mask"></div>
+				<h2 class="title noselect">Clickipedia</h2>
+				<div class="wrapper">
+					<div class="banner"></div>
+					<div class="quickFacts">
+						<div>
+							<ul class="heading">
+								<li>Date</li>
+								<li>Contributions</li>
+								<li>Tools</li>
+								<li>Timeframe</li>
+							</ul>
+							<ul class="answer">
+								<li>Fall 2016</li>
+								<li>Individual</li>
+								<li>Web, Phonegap</li>
+								<li>3 Months</li>
+							</ul>
+						</div>
+						
+					</div>
+					<div class="description">
+						<h2>Description</h2>
+						<p>Clickipedia is a mobile application I developed as part of a course that stretched over the entire fall of 2016. In the course, we went through the stages of concept creation, identifying customer needs, creating business models, actual development, and iterating with user studies. My result was an educational Wikipedia game targeted toward children of ages 10-16. The objective is to find a specific Wikipedia article through clicking links found in other articles.</p>
+						<p>I used Phonegap to develop a hybrid mobile application, which I'd never done before. I also learned about conducting user studies individually and staying motivated throughout a long individual project.</p>
+					</div>
+				</div>
+			</div>
+			<div class="content project" id="mid"></div>
+			<div class="content project" id="voteordont">
+				<div class="mask"></div>
+				<h2 class="title noselect">Vote Or Don't</h2>
+				<div class="wrapper">
+					<div class="banner"></div>
+					<div class="quickFacts">
+						<div>
+							<ul class="heading">
+								<li>Date</li>
+								<li>Contributions</li>
+								<li>Tools</li>
+								<li>Timeframe</li>
+							</ul>
+							<ul class="answer">
+								<li>April 2016</li>
+								<li>Individual</li>
+								<li>Web, D3</li>
+								<li>1-2 Weeks</li>
+							</ul>
+						</div>
+						
+					</div>
+					<div class="description">
+						<h2>Description</h2>
+						<p>This was a short individual project in an information visualization course. For every country that had the data, I compared survey data of voting participation with actual participation data from the country's last election. I then color-coded the information on a world map to illustrate the gap in each country's voting numbers.</p>
+						<p>I learned the basics of D3 in this project, and I also used SVG graphics interactively for the first time.</p>
+						<a href="#">Link to demo</a>
+					</div>
+				</div>
+			</div>
+			<div class="content project" id="globetrottar">
+				<div class="mask"></div>
+				<h2 class="title noselect">GlobetrottAR</h2>
+				<div class="wrapper">
+					<div class="banner"></div>
+					<div class="quickFacts">
+						<div>
+							<ul class="heading">
+								<li>Date</li>
+								<li>Contributions</li>
+								<li>Tools</li>
+								<li>Timeframe</li>
+							</ul>
+							<ul class="answer">
+								<li>December 2016</li>
+								<li>UI Design</li>
+								<li>AI, PS, Unity</li>
+								<li>3 Weeks</li>
+							</ul>
+						</div>
+						
+					</div>
+					<div class="description">
+						<h2>Description</h2>
+						<p>This is an augmented reality application intended to be used alongside history museum installations. It presents historical information about world explorers in a fun, interactive way by animating their journeys on an augmented reality globe. The idea was to have a huge globe in a museum that visitors could track with their phones to show the animations.</p>
+						<p>I did the UI design as well as information content, and I learned a lot about UI creation in Unity. I also got better at Photoshop and Illustrator, needing to adapt the content to the limitations I had with the game engine.</p>
+						<a href="#">Link to video</a>
+					</div>
+				</div>
+			</div>
+			<div class="content project" id="vicposts">
+				<div class="mask"></div>
+				<h2 class="title noselect">Facebook Activity</h2>
+				<div class="wrapper">
+					<div class="banner"></div>
+					<div class="quickFacts">
+						<div>
+							<ul class="heading">
+								<li>Date</li>
+								<li>Contributions</li>
+								<li>Tools</li>
+								<li>Timeframe</li>
+							</ul>
+							<ul class="answer">
+								<li>May 2016</li>
+								<li>Individual</li>
+								<li>Web, D3</li>
+								<li>1-2 Weeks</li>
+							</ul>
+						</div>
+						
+					</div>
+					<div class="description">
+						<h2>Description</h2>
+						<p>This was another short individual project in the information visualization course where I also did "Vote Or Don't" and was part of the group that created "Late". The task here was to visualize the facebook posts of the KTH Visualization Studio where the course was taught. I did so in a simple way by plotting each post's date and lifetime reach as a classic bar chart.</p>
+						<p>I wanted to get better at CSS transitions and responsive design, so I chose to put my efforts on making the cleanest and smoothest visualization I could. I think I found a nice design language with this project and you can definitely see its legacy in the design of this portfolio.</p>
+						<a href="#">Link to demo</a>
+					</div>
+				</div>
+			</div>
+			<div class="content project" id="late">
+				<div class="mask"></div>
+				<h2 class="title noselect">Late</h2>
+				<div class="wrapper">
+					<div class="banner"></div>
+					<div class="quickFacts">
+						<div>
+							<ul class="heading">
+								<li>Date</li>
+								<li>Contributions</li>
+								<li>Tools</li>
+								<li>Timeframe</li>
+							</ul>
+							<ul class="answer">
+								<li>May 2016</li>
+								<li>Interaction Design</li>
+								<li>HTML/CSS/JS</li>
+								<li>4 Weeks</li>
+							</ul>
+						</div>
+						
+					</div>
+					<div class="description">
+						<h2>Description</h2>
+						<p>The final project in the information visualization course that yielded "Vote Or Don't" and "Facebook Activity", Late is a visualization of delays in the Stockholm commuter train system. We collected train data from a typical weekday and created a timeline where you can see rush hour delays spread through the system, both in an overview of the entire system as well as a detail view of individual stations.</p>
+						<p>We had loosely defined roles in our group, but I handled much of the interaction, designing the overview/detail flow and visualization.</p>
+						<a href="#">Link to video</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content mobilePlaceholder">
+			<div class="sorry">
+				<h2>Oh, you're on mobile?</h2>
+				<h3>That's great, but unfortunately this site doesn't work on mobile yet.</h3>
+			</div>
+			
+			<div class="widgets">
+				<p>Here's where my social media widgets would be... <br>IF I HAD ANY :'(</p>
+			</div>
+		</div>
+		
+		<!-- <footer>
+			<p>Kalle Andersson 2017</p>
+		</footer> -->
+
+		<script type="text/javascript">
+
+			// Set up click handlers
+			onStart();
+
+		</script>
+	</body>
+</html>

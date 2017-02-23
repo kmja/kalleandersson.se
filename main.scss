@@ -1,0 +1,579 @@
+// Variables
+$blue: #00ffff;
+$pink: #ff7bac;
+$yellow: #fcee21;
+$sharp-ease-out: cubic-bezier(0.19, 1, 0.22, 1);
+
+// Mixins
+@mixin loader($color, $borderWidth, $border-topWidth, $width, $height, $animation-duration, $animation-direction) {
+	border: $borderWidth solid #333;
+	border-top: $border-topWidth solid $color;
+	border-radius: 50%;
+	width: $width;
+	height: $height;
+	animation: spin $animation-duration linear infinite $animation-direction;
+}
+
+@mixin transitions($property, $duration, $delay: 0s, $timing: linear) {
+
+	-webkit-transition-property: $property;
+	-webkit-transition-duration: $duration;
+	-webkit-transition-delay: $delay;
+	-webkit-transition-timing-function: $timing;
+
+	-moz-transition-property: $property;
+	-moz-transition-duration: $duration;
+	-moz-transition-delay: $delay;
+	-moz-transition-timing-function: $timing;
+
+	-o-transition-property: $property;
+	-o-transition-duration: $duration;
+	-o-transition-delay: $delay;
+	-o-transition-timing-function: $timing;
+
+	transition-property: $property;
+	transition-duration: $duration;
+	transition-delay: $delay;
+	transition-timing-function: $timing;
+
+
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+
+	font-family: 'Poiret One', 'Eras Light ITC', cursive;
+	font-size: 100%;
+	font-weight: 300;
+	color: white;
+}
+
+h1 {
+	font-size: 6em;
+	font-weight: 300;
+
+	margin: 0;
+}
+
+h2 {
+	font-size: 3em;
+	font-weight: 300;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+svg {
+	width: 100%;
+	height: 5px;
+	transform: scaleX(0);
+
+	@include transitions(transform, 1s, 0s, $sharp-ease-out);
+}
+
+line {
+	stroke-width: 1px;
+	stroke: white;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	height: 10%;
+	width: 100%;
+
+	text-align: center;
+
+	background-color: black;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+ul li {
+	margin: 20% 0%;
+}
+
+.loader-wrapper-wrapper {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: #333;
+	opacity: 1;
+
+	z-index: 100;
+	pointer-events: none;
+
+	@include transitions(opacity, 0.5s);
+}
+
+.loader-wrapper {
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.loader-big {
+
+	@include loader($pink, 12px, 12px, 120px, 120px, 2s, normal);
+}
+
+.loader-small {
+
+	@include loader($blue, 8px, 16px, 80px, 80px, 1s, reverse);
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+img {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.bg {
+	z-index: -4;
+
+	position: fixed;
+	height: 100%;
+	top: 0;
+	left: 0;
+
+	@include transitions(opacity, 1s);
+	transition: opacity 1s;
+}
+
+#bgMe {
+	z-index: -3;
+
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+
+	height: auto;
+	width: 100%;
+
+	opacity: 0;
+}
+
+#bgWork {
+	z-index: -2;
+	pointer-events: none;
+
+	width: 100%;
+
+	opacity: 0;
+}
+
+.pottfrilla {
+	z-index: 10;
+	height: 33%;
+
+	top: 100%;
+	left: 10%;
+
+	@include transitions(transform, 1s, 0s, $sharp-ease-out);
+}
+
+.menu {
+	z-index: 0;
+
+	position: fixed;
+	top: 30%;
+	right: 5%;
+
+	text-align: center;
+	overflow: hidden;
+}
+
+.link.clicked {
+	pointer-events: none;
+	border-bottom: 1px solid white;
+}
+
+.topCenter {
+	top: -5%;
+	right: 0;
+
+	left: 50%;
+	transform: translateX(-50%) scale(0.5);
+}
+
+.midCenter {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(0.5);
+}
+
+.name {
+	position: relative;
+	opacity: 0;
+	transform: translateY(30%);
+
+	$props: transform, opacity;
+	@include transitions($props, 2s, 0.5s, $sharp-ease-out);
+}
+
+.links {
+	transform: translateY(-50%);
+
+	font-size: 2em;
+}
+
+.links span {
+	position: relative;
+	display: inline-block;
+
+	transform: translateY(-100%);
+	opacity: 0;
+
+	$props: transform, opacity;
+	@include transitions($props, 1.5s, 0s, $sharp-ease-out);
+}
+
+@for $i from 1 through 5 {
+	$delay: 1000ms + $i * 200ms;
+
+	.links span:nth-child(#{$i}) {
+		transition-delay: $delay;
+	}
+}
+
+.fast {
+	transition-duration: 0.5s !important;
+	transition-delay: 0.1s !important;
+}
+
+.komma {
+	left: -5px;
+	font-size: 1.5em;
+}
+
+.link {
+
+	a {
+		border-bottom: 1px solid rgba(0,0,0,0);
+		@include transitions(border-color, 0.3s);
+	}
+	
+	&:nth-child(1) {
+		a {
+			color: $blue;
+		}
+
+		a:hover {
+			border-color: $blue;
+		}
+	}
+
+	&:nth-child(3) {
+		a {
+			color: $pink;
+		}
+
+		a:hover {
+			border-color: $pink;
+		}
+	}
+
+	&:nth-child(5) {
+		a {
+			color: $yellow;
+		}
+
+		a:hover {
+			border-color: $yellow;
+		}
+	}
+}
+
+/*************/
+/* "Me" page */
+/*************/
+
+.about {
+	width: 80%;
+	max-width: 1000px;
+	height: 75%;
+
+	text-align: center;
+	overflow: hidden;
+
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -40%) scaleY(0);
+
+	background-color: rgba(50,50,50,0.5);
+	opacity: 0;
+
+	$props: transform, opacity;
+	$dur: 1s, 0.5s;
+	$del: 1.5s, 0s;
+	@include transitions($props, $dur, $del, $sharp-ease-out);
+}
+
+.about p {
+	text-align: left;
+	padding: 0 10%;
+}
+
+.about.active {
+	opacity: 1;
+	transform: translate(-50%, -40%) scaleY(1);
+}
+
+// .projects {
+// 	width: 100%;
+// 	height: 100%;
+
+// 	position: fixed;
+// 	left: 50%;
+// 	top: 50%;
+// 	transform: translate(-50%, -50%);
+
+// 	text-align: center;
+
+// 	@include transitions(opacity, 0.5s);
+// }
+
+// Loop through project tiles to set position and transition delay
+// Rows
+@for $row from 1 through 3 {
+	// Columns
+	@for $col from 1 through 3 {
+		// Incease transition-delay by an increment for each tile
+		$delayInc: 100ms;
+		$delay: 1500ms + ($row - 1) * 3 * $delayInc + ($col - 1) * $delayInc;
+
+		.projects {
+
+			.project:nth-child(#{ 3 * ($row - 1) + ($col) }) {
+
+				width: 25%;
+				height: 25%;
+				position: fixed;
+				transform: translate(percentage( (25 + 125 * ($col - 1)) / 100 ), percentage( (25 + 125 * ($row - 1)) / 100)) scale(0);
+
+				background-color: black;
+				background-size: cover;
+				background-position: center;
+				opacity: 1;
+				text-align: center;
+
+				$props: transform, opacity;
+				@include transitions($props, 1s, $delay, $sharp-ease-out);
+
+				&.active {
+					transform: translate(percentage( (25 + 125 * ($col - 1)) / 100 ), percentage( (25 + 125 * ($row - 1)) / 100)) scale(1);
+				}
+
+				&:hover {
+					transform: translate(percentage( (25 + 125 * ($col - 1)) / 100 ), percentage( (25 + 125 * ($row - 1)) / 100)) scale(1.1);
+				}
+
+				&:hover .mask {
+					opacity: 0.75;
+				}
+
+				&:hover .title {
+					opacity: 1;
+				}
+
+				&.fastOut {
+					transform: translate(percentage( (25 + 125 * ($col - 1)) / 100 ), percentage( (25 + 125 * ($row - 1)) / 100)) scale(0);
+					transition-delay: 0s !important;
+				}
+
+				&.clicked {
+					z-index: 1;
+					opacity: 1;
+					transform: translate(150%, 150%) scale(3);
+					background-image: none !important;
+					background-color: seashell;
+
+
+					// Restructure project content when clicked
+					.mask {
+						opacity: 0;
+					}
+
+					.title {
+						opacity: 1;
+						transform: translate(-50%, -25%);
+						font-size: 2em;
+						text-shadow: 1px 1px 1px black;
+						-webkit-text-stroke: 1px white;
+					}
+
+					.wrapper {
+						opacity: 1;
+					}
+				}
+
+				.mask {
+
+					width: 100%;
+					height: 100%;
+					position: fixed;
+
+					background-color: black;
+					opacity: 0;
+
+					@include transitions(opacity, 0.25s);
+				}
+
+				.title {
+					z-index: 1;
+
+					position: absolute;
+
+					margin: 0;
+					line-height: 0;
+
+					width: 100%;
+					height: 100%;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -5%);
+
+					opacity: 0;
+
+					@include transitions(opacity, 0.25s);
+				}
+
+				.wrapper {
+
+					opacity: 0;
+
+					position: absolute;
+					bottom: 0;
+
+					font-size: 0.35em;
+
+					@include transitions(opacity, 0.3s);
+
+					.banner {
+						width: 100%;
+						height: 50%;
+						position: fixed;
+						top: 0;
+
+						background-size: cover;
+						-webkit-filter: brightness(50%);
+						-moz-filter: brightness(50%);
+						-o-filter: brightness(50%);
+						filter: brightness(50%);
+					}
+
+					.quickFacts {
+						z-index: -1;
+
+						width: 30%;
+						height: 45%;
+						padding: 2%;
+
+						float: left;
+						position: fixed;
+						bottom: 0;
+
+						background-color: darkcyan;
+
+						div {
+							width: 80%;
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+						}
+
+						.heading {
+							width: 50%;
+							float: left;
+
+							font-weight: bold;
+						}
+
+						.answer {
+							width: 50%;
+							float: right;
+						}
+					}
+
+					.description {
+						width: 60%;
+						padding: 0% 2%;
+
+						float: right;
+						position: fixed;
+						bottom: 0;
+						right: 0;
+
+						text-align: left;
+						color: black;
+
+						h2 {
+							line-height: 0;
+						}
+
+						p {
+							-webkit-text-stroke: 0.1px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.noDelay {
+	transition-delay: 0s !important;
+}
+
+#mid {
+	opacity: 0;
+	pointer-events: none;
+}
+
+$projects: ballz soundark mtgn16 globetrottar late clickipedia vicposts voteordont;
+
+@for $i from 1 through 8 {
+	##{nth($projects, $i)} {
+		background-image: url('img/#{nth($projects, $i)}-thumb.png');
+
+		.banner {
+			background-image: url('img/#{nth($projects, $i)}-banner.png');
+		}
+	}
+}
+
+.mobilePlaceholder {
+	visibility: hidden;
+}
+
+/* IMPORTED CODE */
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari*/
+	 -khtml-user-select: none; /* Konqueror */
+	   -moz-user-select: none; /* Firefox */
+	    -ms-user-select: none; /* Internet Explorer/Edge */
+	        user-select: none; /* Non-prefixed version, currently */
+
+	cursor: default;
+
+
+}
