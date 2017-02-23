@@ -1,0 +1,193 @@
+@media only screen and (max-width: 450px) {
+
+	/* Display static placeholder */
+	// #bgWork {
+	// 	opacity: 1;
+	// }
+
+	// .menu {
+	// 	visibility: hidden;
+	// }
+
+	// .content {
+	// 	visibility: hidden;
+	// }
+
+	// .mobilePlaceholder {
+	// 	visibility: visible;
+
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	text-align: center;
+
+		
+	// }
+
+	// .sorry {
+	// 	width: 80%;
+
+	// 	position: fixed;
+	// 	left: 50%;
+	// 	top: 50%;
+	// 	transform: translate(-50%, -80%);
+	// }
+
+	// .widgets {
+	// 	position: fixed;
+	// 	bottom: 0;
+
+	// 	height: 20%;
+	// 	padding: 0 10%;
+
+	// 	background-color: rgba(0,0,0,0.5);
+	// 	font-size: 1.5em;
+	// }
+
+	// Center menu
+	.menu {
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+
+		width: 100%;
+	}
+
+	// Adjust menu position in ME and WORK pages
+	.topCenter, .midCenter {
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%) scale(0.75);
+
+		// Scale font size in shrunk mobile menu
+		h1 {
+			font-size: 5em;
+		}
+
+		p {
+			font-size: 2.5em;
+		}
+	}
+
+	// Font size and other customization on ME page
+	.about {
+		font-size: 2em;
+
+		width: 90%;
+	}
+
+	// Adjust background size to fit
+	#bgMe {
+		height: 100%;
+		width: auto;
+	}
+
+	// Project layout - just list them vertically
+	.projects {
+		height: auto !important;
+		// Enable scrolling
+		overflow-y: scroll !important;
+		// Disable clicking to allow for clicking the menu
+		pointer-events: none !important;
+
+		// Positioning
+		transform: translateY(25%) !important;
+	}
+	.project {
+		// Reset a bunch of properties
+		margin: 0 !important;
+		padding: 0 !important;
+		transform: none !important;
+		background-image: none !important;
+		background-color: seashell !important;
+
+		// Start setting stuff
+		position: relative !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		height: 500px !important;
+		font-size: 2em !important;
+
+
+
+		// Restructure project content when clicked
+		.mask {
+			opacity: 0 !important;
+		}
+
+		.title {
+			opacity: 1 !important;
+			transform: translate(-50%, -25%) !important; 
+			font-size: 2em !important;
+			text-shadow: 1px 1px 1px black !important;
+			-webkit-text-stroke: 1px white !important;
+
+			position: relative !important;
+			height: auto !important;
+			top: 5% !important;
+		}
+
+		.wrapper {
+			opacity: 1 !important;
+			font-size: 1.25em !important;
+
+			position: relative !important;
+
+			.banner {
+				height: 25% !important;
+				background-size: contain !important;
+				background-repeat: no-repeat !important;
+
+				position: relative !important;
+			}
+
+			.quickFacts {
+				position: relative !important;
+				float: none !important;
+				z-index: initial !important;
+
+				width: 100% !important;
+				height: auto !important;
+				min-height: 300px;
+				padding: 0 !important;
+
+				font-size: 0.8em !important;
+			}
+
+			.description {
+				position: relative !important;
+				float: none !important;
+
+				width: 90% !important;
+				height: auto !important;
+
+				padding: 0 5% !important;
+
+				h2 {
+					font-size: 2em !important;
+				}
+
+				p {
+					font-family: Catamaran !important;
+					font-weight: 100 !important;
+					font-size: 0.85em;	
+
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+
+	body {
+		font-size: 60% !important;
+	}
+
+	.wrapper {
+		font-size: 0.5em !important;
+
+		.description {
+			font-size: 0.85em !important;
+		}
+	}
+}

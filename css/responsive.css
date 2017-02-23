@@ -1,0 +1,93 @@
+@media only screen and (max-width: 450px) {
+  /* Display static placeholder */
+  .menu {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; }
+
+  .topCenter, .midCenter {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0.75); }
+    .topCenter h1, .midCenter h1 {
+      font-size: 5em; }
+    .topCenter p, .midCenter p {
+      font-size: 2.5em; }
+
+  .about {
+    font-size: 2em;
+    width: 90%; }
+
+  #bgMe {
+    height: 100%;
+    width: auto; }
+
+  .projects {
+    height: auto !important;
+    overflow-y: scroll !important;
+    pointer-events: none !important;
+    transform: translateY(25%) !important; }
+
+  .project {
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    background-image: none !important;
+    background-color: seashell !important;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 500px !important;
+    font-size: 2em !important; }
+    .project .mask {
+      opacity: 0 !important; }
+    .project .title {
+      opacity: 1 !important;
+      transform: translate(-50%, -25%) !important;
+      font-size: 2em !important;
+      text-shadow: 1px 1px 1px black !important;
+      -webkit-text-stroke: 1px white !important;
+      position: relative !important;
+      height: auto !important;
+      top: 5% !important; }
+    .project .wrapper {
+      opacity: 1 !important;
+      font-size: 1.25em !important;
+      position: relative !important; }
+      .project .wrapper .banner {
+        height: 25% !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        position: relative !important; }
+      .project .wrapper .quickFacts {
+        position: relative !important;
+        float: none !important;
+        z-index: initial !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 300px;
+        padding: 0 !important;
+        font-size: 0.8em !important; }
+      .project .wrapper .description {
+        position: relative !important;
+        float: none !important;
+        width: 90% !important;
+        height: auto !important;
+        padding: 0 5% !important; }
+        .project .wrapper .description h2 {
+          font-size: 2em !important; }
+        .project .wrapper .description p {
+          font-family: Catamaran !important;
+          font-weight: 100 !important;
+          font-size: 0.85em; } }
+@media only screen and (max-width: 1024px) {
+  body {
+    font-size: 60% !important; }
+
+  .wrapper {
+    font-size: 0.5em !important; }
+    .wrapper .description {
+      font-size: 0.85em !important; } }
+
+/*# sourceMappingURL=responsive.css.map */

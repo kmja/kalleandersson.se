@@ -49,6 +49,8 @@ function onStart() {
 			menuIn();
 		}, 1000);
 
+		// Show projects area
+		$(".projects").addClass("active");
 		// Show tiles
 		// Remove class "fastOut" if it's been activated and add class "active"
 		$(".projects").children()
