@@ -6,8 +6,13 @@
     transform: translate(-50%, -50%);
     width: 100%; }
 
+  .topCenter {
+    bottom: -200%; }
+
+  .midCenter {
+    top: 0; }
+
   .topCenter, .midCenter {
-    top: 0;
     left: 50%;
     transform: translateX(-50%) scale(0.75); }
     .topCenter h1, .midCenter h1 {
@@ -17,35 +22,52 @@
 
   .about {
     font-size: 2em;
-    width: 90%; }
+    width: 90%;
+    height: auto !important; }
+    .about.active {
+      transform: translate(-50%, -125%) scaleY(1) !important; }
 
   #bgMe {
     height: 100%;
     width: auto; }
 
+  /* OPTION 1 */
+  /************/
+  /* END OPTION 1 */
+  /****************/
+  /* OPTION 2 */
+  /************/
   .projects {
     height: auto !important;
     overflow-y: scroll !important;
     pointer-events: none !important;
-    transform: translateY(25%) !important; }
+    margin-top: 33% !important; }
+    .projects.active {
+      pointer-events: auto !important; }
 
   .project {
     margin: 0 !important;
     padding: 0 !important;
     transform: none !important;
     background-image: none !important;
-    background-color: seashell !important;
+    background-color: initial !important;
     position: relative !important;
     width: 100% !important;
     max-width: 100% !important;
     height: 500px !important;
-    font-size: 2em !important; }
+    font-size: 2em !important;
+    opacity: 0 !important;
+    transition-delay: 1.5s !important;
+    overflow-y: auto !important; }
+    .project.active {
+      opacity: 1 !important; }
     .project .mask {
-      opacity: 0 !important; }
+      visibility: hidden; }
     .project .title {
       opacity: 1 !important;
       transform: translate(-50%, -25%) !important;
       font-size: 2em !important;
+      line-height: 2 !important;
       text-shadow: 1px 1px 1px black !important;
       -webkit-text-stroke: 1px white !important;
       position: relative !important;
@@ -65,22 +87,44 @@
         float: none !important;
         z-index: initial !important;
         width: 100% !important;
-        height: auto !important;
-        min-height: 300px;
+        height: 250px !important;
         padding: 0 !important;
         font-size: 0.8em !important; }
+        .project .wrapper .quickFacts div {
+          width: 100% !important; }
+          .project .wrapper .quickFacts div ul {
+            line-height: 0.75 !important;
+            float: none !important;
+            position: absolute !important;
+            left: 50%;
+            top: 50%; }
+          .project .wrapper .quickFacts div .heading {
+            transform: translate(-110%, -50%);
+            text-align: right; }
+          .project .wrapper .quickFacts div .answer {
+            transform: translate(0%, -50%);
+            text-align: left; }
       .project .wrapper .description {
         position: relative !important;
         float: none !important;
+        background-color: seashell;
         width: 90% !important;
         height: auto !important;
-        padding: 0 5% !important; }
+        padding: 5% !important; }
         .project .wrapper .description h2 {
-          font-size: 2em !important; }
+          font-size: 2em !important;
+          line-height: 1 !important;
+          margin: 0 !important; }
         .project .wrapper .description p {
           font-family: Catamaran !important;
           font-weight: 100 !important;
-          font-size: 0.85em; } }
+          font-size: 0.85em; }
+        .project .wrapper .description a {
+          color: steelblue;
+          font-weight: bold; }
+
+  /* END OPTION 2 */
+  /****************/ }
 @media only screen and (max-width: 1024px) {
   body {
     font-size: 60% !important; }

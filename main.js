@@ -10,6 +10,7 @@ function onStart() {
 		$ps
 			.addClass("fastOut")
 			.removeClass("active clicked noDelay");
+		$(".projects").removeClass("active");
 
 		// Switch background
 		$(".bg").css("opacity", "0");

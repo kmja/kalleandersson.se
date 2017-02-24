@@ -1,3 +1,33 @@
+// Variables
+$sharp-ease-out: cubic-bezier(0.19, 1, 0.22, 1);
+
+
+// Mixins
+@mixin transitions($property, $duration, $delay: 0s, $timing: linear) {
+
+	-webkit-transition-property: $property;
+	-webkit-transition-duration: $duration;
+	-webkit-transition-delay: $delay;
+	-webkit-transition-timing-function: $timing;
+
+	-moz-transition-property: $property;
+	-moz-transition-duration: $duration;
+	-moz-transition-delay: $delay;
+	-moz-transition-timing-function: $timing;
+
+	-o-transition-property: $property;
+	-o-transition-duration: $duration;
+	-o-transition-delay: $delay;
+	-o-transition-timing-function: $timing;
+
+	transition-property: $property;
+	transition-duration: $duration;
+	transition-delay: $delay;
+	transition-timing-function: $timing;
+
+
+}
+
 @media only screen and (max-width: 450px) {
 
 	/* Display static placeholder */
@@ -52,9 +82,17 @@
 		width: 100%;
 	}
 
+	// Menu position topCenter is now actually in the bottom
+	.topCenter {
+		bottom: -200%;
+	}
+
+	.midCenter {
+		top: 0;
+	}
+
 	// Adjust menu position in ME and WORK pages
 	.topCenter, .midCenter {
-		top: 0;
 		left: 50%;
 		transform: translateX(-50%) scale(0.75);
 
@@ -73,6 +111,11 @@
 		font-size: 2em;
 
 		width: 90%;
+		height: auto !important;
+
+		&.active {
+			transform: translate(-50%, -125%) scaleY(1) !important;
+		}
 	}
 
 	// Adjust background size to fit
@@ -80,6 +123,48 @@
 		height: 100%;
 		width: auto;
 	}
+
+
+	/* OPTION 1 */
+	/************/
+	// Project tiles restructure
+	// Hide worst projects
+	// #mid, #ballz, #vicposts, #globetrottar {
+	// 	visibility: hidden !important;
+	// }
+	// // Loop through projects and set positions
+	// $projects: "#soundark", "#mtgn16", "#clickipedia", "#voteordont", "#late";
+	// @each $project in $projects {
+
+	// 	$i: index($projects, $project);
+
+	// 	#{$project} {
+	// 		width: 90% !important;
+	// 		height: 20% !important;
+
+	// 		transform: translate(5%, percentage( (15 + $i * 100)) / 100 ) scale(0.5) !important;
+	// 		opacity: 0 !important;
+
+	// 		transition-delay: 2000ms + $i * 150ms !important;
+
+	// 		// Disable clicks when inactive
+	// 		pointer-events: none !important;
+
+	// 		&.active {
+	// 			transform: translate(5%, percentage( (15 + $i * 100)) / 100 ) scale(1) !important;
+	// 			opacity: 1 !important;
+
+	// 			pointer-events: auto !important;
+	// 		}
+			
+	// 	}
+	// }
+	
+	/* END OPTION 1 */
+	/****************/
+
+	/* OPTION 2 */
+	/************/
 
 	// Project layout - just list them vertically
 	.projects {
@@ -90,7 +175,12 @@
 		pointer-events: none !important;
 
 		// Positioning
-		transform: translateY(25%) !important;
+		margin-top: 33% !important;
+
+		&.active {
+			// Enable clicking to allow for scrolling
+			pointer-events: auto !important;
+		}
 	}
 	.project {
 		// Reset a bunch of properties
@@ -98,7 +188,7 @@
 		padding: 0 !important;
 		transform: none !important;
 		background-image: none !important;
-		background-color: seashell !important;
+		background-color: initial !important;
 
 		// Start setting stuff
 		position: relative !important;
@@ -107,17 +197,28 @@
 		height: 500px !important;
 		font-size: 2em !important;
 
+		// Hide when inactive
+		opacity: 0 !important;
 
+		transition-delay: 1.5s !important;
+
+		// Overflow handling
+		overflow-y: auto !important;
+
+		&.active {
+			opacity: 1 !important;
+		}
 
 		// Restructure project content when clicked
 		.mask {
-			opacity: 0 !important;
+			visibility: hidden;
 		}
 
 		.title {
 			opacity: 1 !important;
 			transform: translate(-50%, -25%) !important; 
 			font-size: 2em !important;
+			line-height: 2 !important;
 			text-shadow: 1px 1px 1px black !important;
 			-webkit-text-stroke: 1px white !important;
 
@@ -146,24 +247,50 @@
 				z-index: initial !important;
 
 				width: 100% !important;
-				height: auto !important;
-				min-height: 300px;
+				height: 250px !important;
 				padding: 0 !important;
 
 				font-size: 0.8em !important;
+
+				div {
+					width: 100% !important;
+
+					ul {
+						line-height: 0.75 !important;
+						float: none !important;
+						position: absolute !important;
+
+						left: 50%;
+						top: 50%;
+					}
+
+					.heading {
+						transform: translate(-110%, -50%);
+						text-align: right;
+					}
+
+					.answer {
+						transform: translate(0%, -50%);
+						text-align: left;
+					}
+				}
 			}
 
 			.description {
 				position: relative !important;
 				float: none !important;
 
+				background-color: seashell;
+
 				width: 90% !important;
 				height: auto !important;
 
-				padding: 0 5% !important;
+				padding: 5% !important;
 
 				h2 {
 					font-size: 2em !important;
+					line-height: 1 !important;
+					margin: 0 !important;
 				}
 
 				p {
@@ -172,9 +299,17 @@
 					font-size: 0.85em;	
 
 				}
+
+				a {
+					color: steelblue;
+					font-weight: bold;
+				}
 			}
 		}
 	}
+
+	/* END OPTION 2 */
+	/****************/
 }
 
 @media only screen and (max-width: 1024px) {

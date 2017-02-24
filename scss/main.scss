@@ -338,20 +338,6 @@ img {
 	transform: translate(-50%, -40%) scaleY(1);
 }
 
-// .projects {
-// 	width: 100%;
-// 	height: 100%;
-
-// 	position: fixed;
-// 	left: 50%;
-// 	top: 50%;
-// 	transform: translate(-50%, -50%);
-
-// 	text-align: center;
-
-// 	@include transitions(opacity, 0.5s);
-// }
-
 // Loop through project tiles to set position and transition delay
 // Rows
 @for $row from 1 through 3 {
@@ -362,12 +348,6 @@ img {
 		$delay: 1500ms + ($row - 1) * 3 * $delayInc + ($col - 1) * $delayInc;
 
 		.projects {
-
-			opacity: 0;
-
-			&.active {
-				opacity: 1;
-			}
 
 			.project:nth-child(#{ 3 * ($row - 1) + ($col) }) {
 
