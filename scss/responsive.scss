@@ -166,11 +166,11 @@ $sharp-ease-out: cubic-bezier(0.19, 1, 0.22, 1);
 	/* OPTION 2 */
 	/************/
 
-	// Project layout - just list them vertically
+	// Project tile layout - just order them vertically
 	.projects {
 		height: auto !important;
 		// Enable scrolling
-		overflow-y: scroll !important;
+		overflow-y: auto !important;
 		// Disable clicking to allow for clicking the menu
 		pointer-events: none !important;
 
@@ -202,14 +202,10 @@ $sharp-ease-out: cubic-bezier(0.19, 1, 0.22, 1);
 
 		transition-delay: 1.5s !important;
 
-		// Overflow handling
-		overflow-y: auto !important;
-
 		&.active {
 			opacity: 1 !important;
 		}
 
-		// Restructure project content when clicked
 		.mask {
 			visibility: hidden;
 		}
