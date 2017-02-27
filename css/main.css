@@ -9,6 +9,10 @@ html, body {
   font-weight: 300;
   color: white; }
 
+@media only screen and (max-width: 1024px) {
+  body {
+    font-size: 60%; } }
+
 h1 {
   font-size: 6em;
   font-weight: 300;
@@ -152,6 +156,10 @@ img {
   height: auto;
   width: 100%;
   opacity: 0; }
+  @media only screen and (max-width: 450px) {
+    #bgMe {
+      height: 100%;
+      width: auto; } }
 
 #bgWork {
   z-index: -2;
@@ -188,6 +196,12 @@ img {
   right: 5%;
   text-align: center;
   overflow: hidden; }
+  @media only screen and (max-width: 450px) {
+    .menu {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%; } }
 
 .link.clicked {
   pointer-events: none;
@@ -198,11 +212,30 @@ img {
   right: 0;
   left: 50%;
   transform: translateX(-50%) scale(0.5); }
+  @media only screen and (max-width: 450px) {
+    .topCenter {
+      top: 50%;
+      bottom: -200%;
+      left: 50%;
+      transform: translateX(-50%) scale(0.75); }
+      .topCenter h1 {
+        font-size: 5em; }
+      .topCenter p {
+        font-size: 2.5em; } }
 
 .midCenter {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) scale(0.5); }
+  @media only screen and (max-width: 450px) {
+    .midCenter {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%) scale(0.75); }
+      .midCenter h1 {
+        font-size: 5em; }
+      .midCenter p {
+        font-size: 2.5em; } }
 
 .name {
   position: relative;
@@ -228,6 +261,9 @@ img {
 .links {
   transform: translateY(-50%);
   font-size: 2em; }
+  @media only screen and (max-width: 450px) {
+    .links {
+      font-size: 2.5em; } }
 
 .links span {
   position: relative;
@@ -336,17 +372,30 @@ img {
   transition-duration: 1s, 0.5s;
   transition-delay: 1.5s, 0s;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  .about p {
+    text-align: left;
+    font-family: Catamaran;
+    font-weight: 100;
+    padding: 0 10%; }
+  .about.active {
+    opacity: 1;
+    transform: translate(-50%, -40%) scaleY(1); }
+  @media only screen and (max-width: 450px) {
+    .about {
+      font-size: 2em;
+      width: 90%;
+      height: auto; }
+      .about.active {
+        transform: translate(-50%, -125%) scaleY(1); } }
 
-.about p {
-  text-align: left;
-  font-family: Catamaran;
-  font-weight: 100;
-  padding: 0 10%; }
-
-.about.active {
-  opacity: 1;
-  transform: translate(-50%, -40%) scaleY(1); }
-
+@media only screen and (max-width: 450px) {
+  .projects {
+    margin-top: 33%;
+    pointer-events: none;
+    overflow-y: auto;
+    height: 6000px; }
+    .projects.active {
+      pointer-events: auto; } }
 .projects .project:nth-child(1) {
   width: 25%;
   height: 25%;
@@ -373,8 +422,25 @@ img {
   transition-duration: 1s;
   transition-delay: 1500ms;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  @media only screen and (max-width: 450px) {
+    .projects .project:nth-child(1) {
+      margin: 0;
+      padding: 0;
+      transform: none !important;
+      background-image: none !important;
+      background-color: initial;
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 15%;
+      font-size: 2em;
+      opacity: 0;
+      transition-delay: 1.5s; } }
   .projects .project:nth-child(1).active {
     transform: translate(25%, 25%) scale(1); }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(1).active {
+        opacity: 1; } }
   .projects .project:nth-child(1):hover {
     transform: translate(25%, 25%) scale(1.1); }
   .projects .project:nth-child(1):hover .mask {
@@ -390,6 +456,9 @@ img {
     transform: translate(150%, 150%) scale(3);
     background-image: none !important;
     background-color: seashell; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(1).clicked {
+        background-color: initial; } }
     .projects .project:nth-child(1).clicked .mask {
       opacity: 0; }
     .projects .project:nth-child(1).clicked .title {
@@ -422,6 +491,9 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(1) .mask {
+        visibility: hidden; } }
   .projects .project:nth-child(1) .title {
     z-index: 1;
     position: absolute;
@@ -449,6 +521,16 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(1) .title {
+        opacity: 1;
+        transform: translate(-50%, -25%);
+        font-size: 2em;
+        text-shadow: 1px 1px 1px black;
+        -webkit-text-stroke: 1px white;
+        position: relative;
+        height: auto;
+        top: 7.5%; } }
   .projects .project:nth-child(1) .wrapper {
     opacity: 0;
     position: absolute;
@@ -470,6 +552,15 @@ img {
     transition-duration: 0.3s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 1024px) {
+      .projects .project:nth-child(1) .wrapper {
+        font-size: 0.5em; } }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(1) .wrapper {
+        opacity: 1;
+        font-size: 1.25em;
+        position: relative;
+        height: 100%; } }
     .projects .project:nth-child(1) .wrapper .banner {
       width: 100%;
       height: 50%;
@@ -480,6 +571,12 @@ img {
       -moz-filter: brightness(50%);
       -o-filter: brightness(50%);
       filter: brightness(50%); }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(1) .wrapper .banner {
+          height: 25%;
+          max-height: 150px;
+          background-repeat: no-repeat;
+          position: relative; } }
     .projects .project:nth-child(1) .wrapper .quickFacts {
       z-index: -1;
       width: 30%;
@@ -489,19 +586,49 @@ img {
       position: fixed;
       bottom: 0;
       background-color: darkcyan; }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(1) .wrapper .quickFacts {
+          position: relative;
+          float: none;
+          z-index: initial;
+          width: 100%;
+          height: 250px;
+          padding: 0;
+          font-size: 0.8em; } }
       .projects .project:nth-child(1) .wrapper .quickFacts div {
         width: 80%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(1) .wrapper .quickFacts div {
+            width: 100%; } }
       .projects .project:nth-child(1) .wrapper .quickFacts .heading {
         width: 50%;
         float: left;
         font-weight: bold; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(1) .wrapper .quickFacts .heading {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-110%, -50%);
+            text-align: right; } }
       .projects .project:nth-child(1) .wrapper .quickFacts .answer {
         width: 50%;
         float: right; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(1) .wrapper .quickFacts .answer {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            text-align: left; } }
     .projects .project:nth-child(1) .wrapper .description {
       width: 60%;
       padding: 0% 2%;
@@ -511,11 +638,42 @@ img {
       right: 0;
       text-align: left;
       color: black; }
+      @media only screen and (max-width: 1024px) {
+        .projects .project:nth-child(1) .wrapper .description {
+          font-size: 0.85em; } }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(1) .wrapper .description {
+          position: relative;
+          float: none;
+          background-color: seashell;
+          width: 90%;
+          height: auto;
+          padding: 5%; } }
       .projects .project:nth-child(1) .wrapper .description h2 {
         line-height: 0; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(1) .wrapper .description h2 {
+            font-size: 2em;
+            line-height: 1;
+            margin: 0; } }
       .projects .project:nth-child(1) .wrapper .description p {
         -webkit-text-stroke: 0.1px; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(1) .wrapper .description p {
+            font-family: Catamaran;
+            font-weight: 100;
+            font-size: 0.85em; } }
+      .projects .project:nth-child(1) .wrapper .description a {
+        color: steelblue; }
 
+@media only screen and (max-width: 450px) {
+  .projects {
+    margin-top: 33%;
+    pointer-events: none;
+    overflow-y: auto;
+    height: 6000px; }
+    .projects.active {
+      pointer-events: auto; } }
 .projects .project:nth-child(2) {
   width: 25%;
   height: 25%;
@@ -542,8 +700,25 @@ img {
   transition-duration: 1s;
   transition-delay: 1600ms;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  @media only screen and (max-width: 450px) {
+    .projects .project:nth-child(2) {
+      margin: 0;
+      padding: 0;
+      transform: none !important;
+      background-image: none !important;
+      background-color: initial;
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 15%;
+      font-size: 2em;
+      opacity: 0;
+      transition-delay: 1.5s; } }
   .projects .project:nth-child(2).active {
     transform: translate(150%, 25%) scale(1); }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(2).active {
+        opacity: 1; } }
   .projects .project:nth-child(2):hover {
     transform: translate(150%, 25%) scale(1.1); }
   .projects .project:nth-child(2):hover .mask {
@@ -559,6 +734,9 @@ img {
     transform: translate(150%, 150%) scale(3);
     background-image: none !important;
     background-color: seashell; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(2).clicked {
+        background-color: initial; } }
     .projects .project:nth-child(2).clicked .mask {
       opacity: 0; }
     .projects .project:nth-child(2).clicked .title {
@@ -591,6 +769,9 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(2) .mask {
+        visibility: hidden; } }
   .projects .project:nth-child(2) .title {
     z-index: 1;
     position: absolute;
@@ -618,6 +799,16 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(2) .title {
+        opacity: 1;
+        transform: translate(-50%, -25%);
+        font-size: 2em;
+        text-shadow: 1px 1px 1px black;
+        -webkit-text-stroke: 1px white;
+        position: relative;
+        height: auto;
+        top: 7.5%; } }
   .projects .project:nth-child(2) .wrapper {
     opacity: 0;
     position: absolute;
@@ -639,6 +830,15 @@ img {
     transition-duration: 0.3s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 1024px) {
+      .projects .project:nth-child(2) .wrapper {
+        font-size: 0.5em; } }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(2) .wrapper {
+        opacity: 1;
+        font-size: 1.25em;
+        position: relative;
+        height: 100%; } }
     .projects .project:nth-child(2) .wrapper .banner {
       width: 100%;
       height: 50%;
@@ -649,6 +849,12 @@ img {
       -moz-filter: brightness(50%);
       -o-filter: brightness(50%);
       filter: brightness(50%); }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(2) .wrapper .banner {
+          height: 25%;
+          max-height: 150px;
+          background-repeat: no-repeat;
+          position: relative; } }
     .projects .project:nth-child(2) .wrapper .quickFacts {
       z-index: -1;
       width: 30%;
@@ -658,19 +864,49 @@ img {
       position: fixed;
       bottom: 0;
       background-color: darkcyan; }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(2) .wrapper .quickFacts {
+          position: relative;
+          float: none;
+          z-index: initial;
+          width: 100%;
+          height: 250px;
+          padding: 0;
+          font-size: 0.8em; } }
       .projects .project:nth-child(2) .wrapper .quickFacts div {
         width: 80%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(2) .wrapper .quickFacts div {
+            width: 100%; } }
       .projects .project:nth-child(2) .wrapper .quickFacts .heading {
         width: 50%;
         float: left;
         font-weight: bold; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(2) .wrapper .quickFacts .heading {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-110%, -50%);
+            text-align: right; } }
       .projects .project:nth-child(2) .wrapper .quickFacts .answer {
         width: 50%;
         float: right; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(2) .wrapper .quickFacts .answer {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            text-align: left; } }
     .projects .project:nth-child(2) .wrapper .description {
       width: 60%;
       padding: 0% 2%;
@@ -680,11 +916,42 @@ img {
       right: 0;
       text-align: left;
       color: black; }
+      @media only screen and (max-width: 1024px) {
+        .projects .project:nth-child(2) .wrapper .description {
+          font-size: 0.85em; } }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(2) .wrapper .description {
+          position: relative;
+          float: none;
+          background-color: seashell;
+          width: 90%;
+          height: auto;
+          padding: 5%; } }
       .projects .project:nth-child(2) .wrapper .description h2 {
         line-height: 0; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(2) .wrapper .description h2 {
+            font-size: 2em;
+            line-height: 1;
+            margin: 0; } }
       .projects .project:nth-child(2) .wrapper .description p {
         -webkit-text-stroke: 0.1px; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(2) .wrapper .description p {
+            font-family: Catamaran;
+            font-weight: 100;
+            font-size: 0.85em; } }
+      .projects .project:nth-child(2) .wrapper .description a {
+        color: steelblue; }
 
+@media only screen and (max-width: 450px) {
+  .projects {
+    margin-top: 33%;
+    pointer-events: none;
+    overflow-y: auto;
+    height: 6000px; }
+    .projects.active {
+      pointer-events: auto; } }
 .projects .project:nth-child(3) {
   width: 25%;
   height: 25%;
@@ -711,8 +978,25 @@ img {
   transition-duration: 1s;
   transition-delay: 1700ms;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  @media only screen and (max-width: 450px) {
+    .projects .project:nth-child(3) {
+      margin: 0;
+      padding: 0;
+      transform: none !important;
+      background-image: none !important;
+      background-color: initial;
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 15%;
+      font-size: 2em;
+      opacity: 0;
+      transition-delay: 1.5s; } }
   .projects .project:nth-child(3).active {
     transform: translate(275%, 25%) scale(1); }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(3).active {
+        opacity: 1; } }
   .projects .project:nth-child(3):hover {
     transform: translate(275%, 25%) scale(1.1); }
   .projects .project:nth-child(3):hover .mask {
@@ -728,6 +1012,9 @@ img {
     transform: translate(150%, 150%) scale(3);
     background-image: none !important;
     background-color: seashell; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(3).clicked {
+        background-color: initial; } }
     .projects .project:nth-child(3).clicked .mask {
       opacity: 0; }
     .projects .project:nth-child(3).clicked .title {
@@ -760,6 +1047,9 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(3) .mask {
+        visibility: hidden; } }
   .projects .project:nth-child(3) .title {
     z-index: 1;
     position: absolute;
@@ -787,6 +1077,16 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(3) .title {
+        opacity: 1;
+        transform: translate(-50%, -25%);
+        font-size: 2em;
+        text-shadow: 1px 1px 1px black;
+        -webkit-text-stroke: 1px white;
+        position: relative;
+        height: auto;
+        top: 7.5%; } }
   .projects .project:nth-child(3) .wrapper {
     opacity: 0;
     position: absolute;
@@ -808,6 +1108,15 @@ img {
     transition-duration: 0.3s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 1024px) {
+      .projects .project:nth-child(3) .wrapper {
+        font-size: 0.5em; } }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(3) .wrapper {
+        opacity: 1;
+        font-size: 1.25em;
+        position: relative;
+        height: 100%; } }
     .projects .project:nth-child(3) .wrapper .banner {
       width: 100%;
       height: 50%;
@@ -818,6 +1127,12 @@ img {
       -moz-filter: brightness(50%);
       -o-filter: brightness(50%);
       filter: brightness(50%); }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(3) .wrapper .banner {
+          height: 25%;
+          max-height: 150px;
+          background-repeat: no-repeat;
+          position: relative; } }
     .projects .project:nth-child(3) .wrapper .quickFacts {
       z-index: -1;
       width: 30%;
@@ -827,19 +1142,49 @@ img {
       position: fixed;
       bottom: 0;
       background-color: darkcyan; }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(3) .wrapper .quickFacts {
+          position: relative;
+          float: none;
+          z-index: initial;
+          width: 100%;
+          height: 250px;
+          padding: 0;
+          font-size: 0.8em; } }
       .projects .project:nth-child(3) .wrapper .quickFacts div {
         width: 80%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(3) .wrapper .quickFacts div {
+            width: 100%; } }
       .projects .project:nth-child(3) .wrapper .quickFacts .heading {
         width: 50%;
         float: left;
         font-weight: bold; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(3) .wrapper .quickFacts .heading {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-110%, -50%);
+            text-align: right; } }
       .projects .project:nth-child(3) .wrapper .quickFacts .answer {
         width: 50%;
         float: right; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(3) .wrapper .quickFacts .answer {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            text-align: left; } }
     .projects .project:nth-child(3) .wrapper .description {
       width: 60%;
       padding: 0% 2%;
@@ -849,11 +1194,42 @@ img {
       right: 0;
       text-align: left;
       color: black; }
+      @media only screen and (max-width: 1024px) {
+        .projects .project:nth-child(3) .wrapper .description {
+          font-size: 0.85em; } }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(3) .wrapper .description {
+          position: relative;
+          float: none;
+          background-color: seashell;
+          width: 90%;
+          height: auto;
+          padding: 5%; } }
       .projects .project:nth-child(3) .wrapper .description h2 {
         line-height: 0; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(3) .wrapper .description h2 {
+            font-size: 2em;
+            line-height: 1;
+            margin: 0; } }
       .projects .project:nth-child(3) .wrapper .description p {
         -webkit-text-stroke: 0.1px; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(3) .wrapper .description p {
+            font-family: Catamaran;
+            font-weight: 100;
+            font-size: 0.85em; } }
+      .projects .project:nth-child(3) .wrapper .description a {
+        color: steelblue; }
 
+@media only screen and (max-width: 450px) {
+  .projects {
+    margin-top: 33%;
+    pointer-events: none;
+    overflow-y: auto;
+    height: 6000px; }
+    .projects.active {
+      pointer-events: auto; } }
 .projects .project:nth-child(4) {
   width: 25%;
   height: 25%;
@@ -880,8 +1256,25 @@ img {
   transition-duration: 1s;
   transition-delay: 1800ms;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  @media only screen and (max-width: 450px) {
+    .projects .project:nth-child(4) {
+      margin: 0;
+      padding: 0;
+      transform: none !important;
+      background-image: none !important;
+      background-color: initial;
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 15%;
+      font-size: 2em;
+      opacity: 0;
+      transition-delay: 1.5s; } }
   .projects .project:nth-child(4).active {
     transform: translate(25%, 150%) scale(1); }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(4).active {
+        opacity: 1; } }
   .projects .project:nth-child(4):hover {
     transform: translate(25%, 150%) scale(1.1); }
   .projects .project:nth-child(4):hover .mask {
@@ -897,6 +1290,9 @@ img {
     transform: translate(150%, 150%) scale(3);
     background-image: none !important;
     background-color: seashell; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(4).clicked {
+        background-color: initial; } }
     .projects .project:nth-child(4).clicked .mask {
       opacity: 0; }
     .projects .project:nth-child(4).clicked .title {
@@ -929,6 +1325,9 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(4) .mask {
+        visibility: hidden; } }
   .projects .project:nth-child(4) .title {
     z-index: 1;
     position: absolute;
@@ -956,6 +1355,16 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(4) .title {
+        opacity: 1;
+        transform: translate(-50%, -25%);
+        font-size: 2em;
+        text-shadow: 1px 1px 1px black;
+        -webkit-text-stroke: 1px white;
+        position: relative;
+        height: auto;
+        top: 7.5%; } }
   .projects .project:nth-child(4) .wrapper {
     opacity: 0;
     position: absolute;
@@ -977,6 +1386,15 @@ img {
     transition-duration: 0.3s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 1024px) {
+      .projects .project:nth-child(4) .wrapper {
+        font-size: 0.5em; } }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(4) .wrapper {
+        opacity: 1;
+        font-size: 1.25em;
+        position: relative;
+        height: 100%; } }
     .projects .project:nth-child(4) .wrapper .banner {
       width: 100%;
       height: 50%;
@@ -987,6 +1405,12 @@ img {
       -moz-filter: brightness(50%);
       -o-filter: brightness(50%);
       filter: brightness(50%); }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(4) .wrapper .banner {
+          height: 25%;
+          max-height: 150px;
+          background-repeat: no-repeat;
+          position: relative; } }
     .projects .project:nth-child(4) .wrapper .quickFacts {
       z-index: -1;
       width: 30%;
@@ -996,19 +1420,49 @@ img {
       position: fixed;
       bottom: 0;
       background-color: darkcyan; }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(4) .wrapper .quickFacts {
+          position: relative;
+          float: none;
+          z-index: initial;
+          width: 100%;
+          height: 250px;
+          padding: 0;
+          font-size: 0.8em; } }
       .projects .project:nth-child(4) .wrapper .quickFacts div {
         width: 80%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(4) .wrapper .quickFacts div {
+            width: 100%; } }
       .projects .project:nth-child(4) .wrapper .quickFacts .heading {
         width: 50%;
         float: left;
         font-weight: bold; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(4) .wrapper .quickFacts .heading {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-110%, -50%);
+            text-align: right; } }
       .projects .project:nth-child(4) .wrapper .quickFacts .answer {
         width: 50%;
         float: right; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(4) .wrapper .quickFacts .answer {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            text-align: left; } }
     .projects .project:nth-child(4) .wrapper .description {
       width: 60%;
       padding: 0% 2%;
@@ -1018,11 +1472,42 @@ img {
       right: 0;
       text-align: left;
       color: black; }
+      @media only screen and (max-width: 1024px) {
+        .projects .project:nth-child(4) .wrapper .description {
+          font-size: 0.85em; } }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(4) .wrapper .description {
+          position: relative;
+          float: none;
+          background-color: seashell;
+          width: 90%;
+          height: auto;
+          padding: 5%; } }
       .projects .project:nth-child(4) .wrapper .description h2 {
         line-height: 0; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(4) .wrapper .description h2 {
+            font-size: 2em;
+            line-height: 1;
+            margin: 0; } }
       .projects .project:nth-child(4) .wrapper .description p {
         -webkit-text-stroke: 0.1px; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(4) .wrapper .description p {
+            font-family: Catamaran;
+            font-weight: 100;
+            font-size: 0.85em; } }
+      .projects .project:nth-child(4) .wrapper .description a {
+        color: steelblue; }
 
+@media only screen and (max-width: 450px) {
+  .projects {
+    margin-top: 33%;
+    pointer-events: none;
+    overflow-y: auto;
+    height: 6000px; }
+    .projects.active {
+      pointer-events: auto; } }
 .projects .project:nth-child(5) {
   width: 25%;
   height: 25%;
@@ -1049,8 +1534,25 @@ img {
   transition-duration: 1s;
   transition-delay: 1900ms;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  @media only screen and (max-width: 450px) {
+    .projects .project:nth-child(5) {
+      margin: 0;
+      padding: 0;
+      transform: none !important;
+      background-image: none !important;
+      background-color: initial;
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 15%;
+      font-size: 2em;
+      opacity: 0;
+      transition-delay: 1.5s; } }
   .projects .project:nth-child(5).active {
     transform: translate(150%, 150%) scale(1); }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(5).active {
+        opacity: 1; } }
   .projects .project:nth-child(5):hover {
     transform: translate(150%, 150%) scale(1.1); }
   .projects .project:nth-child(5):hover .mask {
@@ -1066,6 +1568,9 @@ img {
     transform: translate(150%, 150%) scale(3);
     background-image: none !important;
     background-color: seashell; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(5).clicked {
+        background-color: initial; } }
     .projects .project:nth-child(5).clicked .mask {
       opacity: 0; }
     .projects .project:nth-child(5).clicked .title {
@@ -1098,6 +1603,9 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(5) .mask {
+        visibility: hidden; } }
   .projects .project:nth-child(5) .title {
     z-index: 1;
     position: absolute;
@@ -1125,6 +1633,16 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(5) .title {
+        opacity: 1;
+        transform: translate(-50%, -25%);
+        font-size: 2em;
+        text-shadow: 1px 1px 1px black;
+        -webkit-text-stroke: 1px white;
+        position: relative;
+        height: auto;
+        top: 7.5%; } }
   .projects .project:nth-child(5) .wrapper {
     opacity: 0;
     position: absolute;
@@ -1146,6 +1664,15 @@ img {
     transition-duration: 0.3s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 1024px) {
+      .projects .project:nth-child(5) .wrapper {
+        font-size: 0.5em; } }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(5) .wrapper {
+        opacity: 1;
+        font-size: 1.25em;
+        position: relative;
+        height: 100%; } }
     .projects .project:nth-child(5) .wrapper .banner {
       width: 100%;
       height: 50%;
@@ -1156,6 +1683,12 @@ img {
       -moz-filter: brightness(50%);
       -o-filter: brightness(50%);
       filter: brightness(50%); }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(5) .wrapper .banner {
+          height: 25%;
+          max-height: 150px;
+          background-repeat: no-repeat;
+          position: relative; } }
     .projects .project:nth-child(5) .wrapper .quickFacts {
       z-index: -1;
       width: 30%;
@@ -1165,19 +1698,49 @@ img {
       position: fixed;
       bottom: 0;
       background-color: darkcyan; }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(5) .wrapper .quickFacts {
+          position: relative;
+          float: none;
+          z-index: initial;
+          width: 100%;
+          height: 250px;
+          padding: 0;
+          font-size: 0.8em; } }
       .projects .project:nth-child(5) .wrapper .quickFacts div {
         width: 80%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(5) .wrapper .quickFacts div {
+            width: 100%; } }
       .projects .project:nth-child(5) .wrapper .quickFacts .heading {
         width: 50%;
         float: left;
         font-weight: bold; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(5) .wrapper .quickFacts .heading {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-110%, -50%);
+            text-align: right; } }
       .projects .project:nth-child(5) .wrapper .quickFacts .answer {
         width: 50%;
         float: right; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(5) .wrapper .quickFacts .answer {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            text-align: left; } }
     .projects .project:nth-child(5) .wrapper .description {
       width: 60%;
       padding: 0% 2%;
@@ -1187,11 +1750,42 @@ img {
       right: 0;
       text-align: left;
       color: black; }
+      @media only screen and (max-width: 1024px) {
+        .projects .project:nth-child(5) .wrapper .description {
+          font-size: 0.85em; } }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(5) .wrapper .description {
+          position: relative;
+          float: none;
+          background-color: seashell;
+          width: 90%;
+          height: auto;
+          padding: 5%; } }
       .projects .project:nth-child(5) .wrapper .description h2 {
         line-height: 0; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(5) .wrapper .description h2 {
+            font-size: 2em;
+            line-height: 1;
+            margin: 0; } }
       .projects .project:nth-child(5) .wrapper .description p {
         -webkit-text-stroke: 0.1px; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(5) .wrapper .description p {
+            font-family: Catamaran;
+            font-weight: 100;
+            font-size: 0.85em; } }
+      .projects .project:nth-child(5) .wrapper .description a {
+        color: steelblue; }
 
+@media only screen and (max-width: 450px) {
+  .projects {
+    margin-top: 33%;
+    pointer-events: none;
+    overflow-y: auto;
+    height: 6000px; }
+    .projects.active {
+      pointer-events: auto; } }
 .projects .project:nth-child(6) {
   width: 25%;
   height: 25%;
@@ -1218,8 +1812,25 @@ img {
   transition-duration: 1s;
   transition-delay: 2000ms;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  @media only screen and (max-width: 450px) {
+    .projects .project:nth-child(6) {
+      margin: 0;
+      padding: 0;
+      transform: none !important;
+      background-image: none !important;
+      background-color: initial;
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 15%;
+      font-size: 2em;
+      opacity: 0;
+      transition-delay: 1.5s; } }
   .projects .project:nth-child(6).active {
     transform: translate(275%, 150%) scale(1); }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(6).active {
+        opacity: 1; } }
   .projects .project:nth-child(6):hover {
     transform: translate(275%, 150%) scale(1.1); }
   .projects .project:nth-child(6):hover .mask {
@@ -1235,6 +1846,9 @@ img {
     transform: translate(150%, 150%) scale(3);
     background-image: none !important;
     background-color: seashell; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(6).clicked {
+        background-color: initial; } }
     .projects .project:nth-child(6).clicked .mask {
       opacity: 0; }
     .projects .project:nth-child(6).clicked .title {
@@ -1267,6 +1881,9 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(6) .mask {
+        visibility: hidden; } }
   .projects .project:nth-child(6) .title {
     z-index: 1;
     position: absolute;
@@ -1294,6 +1911,16 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(6) .title {
+        opacity: 1;
+        transform: translate(-50%, -25%);
+        font-size: 2em;
+        text-shadow: 1px 1px 1px black;
+        -webkit-text-stroke: 1px white;
+        position: relative;
+        height: auto;
+        top: 7.5%; } }
   .projects .project:nth-child(6) .wrapper {
     opacity: 0;
     position: absolute;
@@ -1315,6 +1942,15 @@ img {
     transition-duration: 0.3s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 1024px) {
+      .projects .project:nth-child(6) .wrapper {
+        font-size: 0.5em; } }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(6) .wrapper {
+        opacity: 1;
+        font-size: 1.25em;
+        position: relative;
+        height: 100%; } }
     .projects .project:nth-child(6) .wrapper .banner {
       width: 100%;
       height: 50%;
@@ -1325,6 +1961,12 @@ img {
       -moz-filter: brightness(50%);
       -o-filter: brightness(50%);
       filter: brightness(50%); }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(6) .wrapper .banner {
+          height: 25%;
+          max-height: 150px;
+          background-repeat: no-repeat;
+          position: relative; } }
     .projects .project:nth-child(6) .wrapper .quickFacts {
       z-index: -1;
       width: 30%;
@@ -1334,19 +1976,49 @@ img {
       position: fixed;
       bottom: 0;
       background-color: darkcyan; }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(6) .wrapper .quickFacts {
+          position: relative;
+          float: none;
+          z-index: initial;
+          width: 100%;
+          height: 250px;
+          padding: 0;
+          font-size: 0.8em; } }
       .projects .project:nth-child(6) .wrapper .quickFacts div {
         width: 80%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(6) .wrapper .quickFacts div {
+            width: 100%; } }
       .projects .project:nth-child(6) .wrapper .quickFacts .heading {
         width: 50%;
         float: left;
         font-weight: bold; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(6) .wrapper .quickFacts .heading {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-110%, -50%);
+            text-align: right; } }
       .projects .project:nth-child(6) .wrapper .quickFacts .answer {
         width: 50%;
         float: right; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(6) .wrapper .quickFacts .answer {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            text-align: left; } }
     .projects .project:nth-child(6) .wrapper .description {
       width: 60%;
       padding: 0% 2%;
@@ -1356,11 +2028,42 @@ img {
       right: 0;
       text-align: left;
       color: black; }
+      @media only screen and (max-width: 1024px) {
+        .projects .project:nth-child(6) .wrapper .description {
+          font-size: 0.85em; } }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(6) .wrapper .description {
+          position: relative;
+          float: none;
+          background-color: seashell;
+          width: 90%;
+          height: auto;
+          padding: 5%; } }
       .projects .project:nth-child(6) .wrapper .description h2 {
         line-height: 0; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(6) .wrapper .description h2 {
+            font-size: 2em;
+            line-height: 1;
+            margin: 0; } }
       .projects .project:nth-child(6) .wrapper .description p {
         -webkit-text-stroke: 0.1px; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(6) .wrapper .description p {
+            font-family: Catamaran;
+            font-weight: 100;
+            font-size: 0.85em; } }
+      .projects .project:nth-child(6) .wrapper .description a {
+        color: steelblue; }
 
+@media only screen and (max-width: 450px) {
+  .projects {
+    margin-top: 33%;
+    pointer-events: none;
+    overflow-y: auto;
+    height: 6000px; }
+    .projects.active {
+      pointer-events: auto; } }
 .projects .project:nth-child(7) {
   width: 25%;
   height: 25%;
@@ -1387,8 +2090,25 @@ img {
   transition-duration: 1s;
   transition-delay: 2100ms;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  @media only screen and (max-width: 450px) {
+    .projects .project:nth-child(7) {
+      margin: 0;
+      padding: 0;
+      transform: none !important;
+      background-image: none !important;
+      background-color: initial;
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 15%;
+      font-size: 2em;
+      opacity: 0;
+      transition-delay: 1.5s; } }
   .projects .project:nth-child(7).active {
     transform: translate(25%, 275%) scale(1); }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(7).active {
+        opacity: 1; } }
   .projects .project:nth-child(7):hover {
     transform: translate(25%, 275%) scale(1.1); }
   .projects .project:nth-child(7):hover .mask {
@@ -1404,6 +2124,9 @@ img {
     transform: translate(150%, 150%) scale(3);
     background-image: none !important;
     background-color: seashell; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(7).clicked {
+        background-color: initial; } }
     .projects .project:nth-child(7).clicked .mask {
       opacity: 0; }
     .projects .project:nth-child(7).clicked .title {
@@ -1436,6 +2159,9 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(7) .mask {
+        visibility: hidden; } }
   .projects .project:nth-child(7) .title {
     z-index: 1;
     position: absolute;
@@ -1463,6 +2189,16 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(7) .title {
+        opacity: 1;
+        transform: translate(-50%, -25%);
+        font-size: 2em;
+        text-shadow: 1px 1px 1px black;
+        -webkit-text-stroke: 1px white;
+        position: relative;
+        height: auto;
+        top: 7.5%; } }
   .projects .project:nth-child(7) .wrapper {
     opacity: 0;
     position: absolute;
@@ -1484,6 +2220,15 @@ img {
     transition-duration: 0.3s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 1024px) {
+      .projects .project:nth-child(7) .wrapper {
+        font-size: 0.5em; } }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(7) .wrapper {
+        opacity: 1;
+        font-size: 1.25em;
+        position: relative;
+        height: 100%; } }
     .projects .project:nth-child(7) .wrapper .banner {
       width: 100%;
       height: 50%;
@@ -1494,6 +2239,12 @@ img {
       -moz-filter: brightness(50%);
       -o-filter: brightness(50%);
       filter: brightness(50%); }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(7) .wrapper .banner {
+          height: 25%;
+          max-height: 150px;
+          background-repeat: no-repeat;
+          position: relative; } }
     .projects .project:nth-child(7) .wrapper .quickFacts {
       z-index: -1;
       width: 30%;
@@ -1503,19 +2254,49 @@ img {
       position: fixed;
       bottom: 0;
       background-color: darkcyan; }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(7) .wrapper .quickFacts {
+          position: relative;
+          float: none;
+          z-index: initial;
+          width: 100%;
+          height: 250px;
+          padding: 0;
+          font-size: 0.8em; } }
       .projects .project:nth-child(7) .wrapper .quickFacts div {
         width: 80%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(7) .wrapper .quickFacts div {
+            width: 100%; } }
       .projects .project:nth-child(7) .wrapper .quickFacts .heading {
         width: 50%;
         float: left;
         font-weight: bold; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(7) .wrapper .quickFacts .heading {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-110%, -50%);
+            text-align: right; } }
       .projects .project:nth-child(7) .wrapper .quickFacts .answer {
         width: 50%;
         float: right; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(7) .wrapper .quickFacts .answer {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            text-align: left; } }
     .projects .project:nth-child(7) .wrapper .description {
       width: 60%;
       padding: 0% 2%;
@@ -1525,11 +2306,42 @@ img {
       right: 0;
       text-align: left;
       color: black; }
+      @media only screen and (max-width: 1024px) {
+        .projects .project:nth-child(7) .wrapper .description {
+          font-size: 0.85em; } }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(7) .wrapper .description {
+          position: relative;
+          float: none;
+          background-color: seashell;
+          width: 90%;
+          height: auto;
+          padding: 5%; } }
       .projects .project:nth-child(7) .wrapper .description h2 {
         line-height: 0; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(7) .wrapper .description h2 {
+            font-size: 2em;
+            line-height: 1;
+            margin: 0; } }
       .projects .project:nth-child(7) .wrapper .description p {
         -webkit-text-stroke: 0.1px; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(7) .wrapper .description p {
+            font-family: Catamaran;
+            font-weight: 100;
+            font-size: 0.85em; } }
+      .projects .project:nth-child(7) .wrapper .description a {
+        color: steelblue; }
 
+@media only screen and (max-width: 450px) {
+  .projects {
+    margin-top: 33%;
+    pointer-events: none;
+    overflow-y: auto;
+    height: 6000px; }
+    .projects.active {
+      pointer-events: auto; } }
 .projects .project:nth-child(8) {
   width: 25%;
   height: 25%;
@@ -1556,8 +2368,25 @@ img {
   transition-duration: 1s;
   transition-delay: 2200ms;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  @media only screen and (max-width: 450px) {
+    .projects .project:nth-child(8) {
+      margin: 0;
+      padding: 0;
+      transform: none !important;
+      background-image: none !important;
+      background-color: initial;
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 15%;
+      font-size: 2em;
+      opacity: 0;
+      transition-delay: 1.5s; } }
   .projects .project:nth-child(8).active {
     transform: translate(150%, 275%) scale(1); }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(8).active {
+        opacity: 1; } }
   .projects .project:nth-child(8):hover {
     transform: translate(150%, 275%) scale(1.1); }
   .projects .project:nth-child(8):hover .mask {
@@ -1573,6 +2402,9 @@ img {
     transform: translate(150%, 150%) scale(3);
     background-image: none !important;
     background-color: seashell; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(8).clicked {
+        background-color: initial; } }
     .projects .project:nth-child(8).clicked .mask {
       opacity: 0; }
     .projects .project:nth-child(8).clicked .title {
@@ -1605,6 +2437,9 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(8) .mask {
+        visibility: hidden; } }
   .projects .project:nth-child(8) .title {
     z-index: 1;
     position: absolute;
@@ -1632,6 +2467,16 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(8) .title {
+        opacity: 1;
+        transform: translate(-50%, -25%);
+        font-size: 2em;
+        text-shadow: 1px 1px 1px black;
+        -webkit-text-stroke: 1px white;
+        position: relative;
+        height: auto;
+        top: 7.5%; } }
   .projects .project:nth-child(8) .wrapper {
     opacity: 0;
     position: absolute;
@@ -1653,6 +2498,15 @@ img {
     transition-duration: 0.3s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 1024px) {
+      .projects .project:nth-child(8) .wrapper {
+        font-size: 0.5em; } }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(8) .wrapper {
+        opacity: 1;
+        font-size: 1.25em;
+        position: relative;
+        height: 100%; } }
     .projects .project:nth-child(8) .wrapper .banner {
       width: 100%;
       height: 50%;
@@ -1663,6 +2517,12 @@ img {
       -moz-filter: brightness(50%);
       -o-filter: brightness(50%);
       filter: brightness(50%); }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(8) .wrapper .banner {
+          height: 25%;
+          max-height: 150px;
+          background-repeat: no-repeat;
+          position: relative; } }
     .projects .project:nth-child(8) .wrapper .quickFacts {
       z-index: -1;
       width: 30%;
@@ -1672,19 +2532,49 @@ img {
       position: fixed;
       bottom: 0;
       background-color: darkcyan; }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(8) .wrapper .quickFacts {
+          position: relative;
+          float: none;
+          z-index: initial;
+          width: 100%;
+          height: 250px;
+          padding: 0;
+          font-size: 0.8em; } }
       .projects .project:nth-child(8) .wrapper .quickFacts div {
         width: 80%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(8) .wrapper .quickFacts div {
+            width: 100%; } }
       .projects .project:nth-child(8) .wrapper .quickFacts .heading {
         width: 50%;
         float: left;
         font-weight: bold; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(8) .wrapper .quickFacts .heading {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-110%, -50%);
+            text-align: right; } }
       .projects .project:nth-child(8) .wrapper .quickFacts .answer {
         width: 50%;
         float: right; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(8) .wrapper .quickFacts .answer {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            text-align: left; } }
     .projects .project:nth-child(8) .wrapper .description {
       width: 60%;
       padding: 0% 2%;
@@ -1694,11 +2584,42 @@ img {
       right: 0;
       text-align: left;
       color: black; }
+      @media only screen and (max-width: 1024px) {
+        .projects .project:nth-child(8) .wrapper .description {
+          font-size: 0.85em; } }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(8) .wrapper .description {
+          position: relative;
+          float: none;
+          background-color: seashell;
+          width: 90%;
+          height: auto;
+          padding: 5%; } }
       .projects .project:nth-child(8) .wrapper .description h2 {
         line-height: 0; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(8) .wrapper .description h2 {
+            font-size: 2em;
+            line-height: 1;
+            margin: 0; } }
       .projects .project:nth-child(8) .wrapper .description p {
         -webkit-text-stroke: 0.1px; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(8) .wrapper .description p {
+            font-family: Catamaran;
+            font-weight: 100;
+            font-size: 0.85em; } }
+      .projects .project:nth-child(8) .wrapper .description a {
+        color: steelblue; }
 
+@media only screen and (max-width: 450px) {
+  .projects {
+    margin-top: 33%;
+    pointer-events: none;
+    overflow-y: auto;
+    height: 6000px; }
+    .projects.active {
+      pointer-events: auto; } }
 .projects .project:nth-child(9) {
   width: 25%;
   height: 25%;
@@ -1725,8 +2646,25 @@ img {
   transition-duration: 1s;
   transition-delay: 2300ms;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  @media only screen and (max-width: 450px) {
+    .projects .project:nth-child(9) {
+      margin: 0;
+      padding: 0;
+      transform: none !important;
+      background-image: none !important;
+      background-color: initial;
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 15%;
+      font-size: 2em;
+      opacity: 0;
+      transition-delay: 1.5s; } }
   .projects .project:nth-child(9).active {
     transform: translate(275%, 275%) scale(1); }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(9).active {
+        opacity: 1; } }
   .projects .project:nth-child(9):hover {
     transform: translate(275%, 275%) scale(1.1); }
   .projects .project:nth-child(9):hover .mask {
@@ -1742,6 +2680,9 @@ img {
     transform: translate(150%, 150%) scale(3);
     background-image: none !important;
     background-color: seashell; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(9).clicked {
+        background-color: initial; } }
     .projects .project:nth-child(9).clicked .mask {
       opacity: 0; }
     .projects .project:nth-child(9).clicked .title {
@@ -1774,6 +2715,9 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(9) .mask {
+        visibility: hidden; } }
   .projects .project:nth-child(9) .title {
     z-index: 1;
     position: absolute;
@@ -1801,6 +2745,16 @@ img {
     transition-duration: 0.25s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(9) .title {
+        opacity: 1;
+        transform: translate(-50%, -25%);
+        font-size: 2em;
+        text-shadow: 1px 1px 1px black;
+        -webkit-text-stroke: 1px white;
+        position: relative;
+        height: auto;
+        top: 7.5%; } }
   .projects .project:nth-child(9) .wrapper {
     opacity: 0;
     position: absolute;
@@ -1822,6 +2776,15 @@ img {
     transition-duration: 0.3s;
     transition-delay: 0s;
     transition-timing-function: linear; }
+    @media only screen and (max-width: 1024px) {
+      .projects .project:nth-child(9) .wrapper {
+        font-size: 0.5em; } }
+    @media only screen and (max-width: 450px) {
+      .projects .project:nth-child(9) .wrapper {
+        opacity: 1;
+        font-size: 1.25em;
+        position: relative;
+        height: 100%; } }
     .projects .project:nth-child(9) .wrapper .banner {
       width: 100%;
       height: 50%;
@@ -1832,6 +2795,12 @@ img {
       -moz-filter: brightness(50%);
       -o-filter: brightness(50%);
       filter: brightness(50%); }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(9) .wrapper .banner {
+          height: 25%;
+          max-height: 150px;
+          background-repeat: no-repeat;
+          position: relative; } }
     .projects .project:nth-child(9) .wrapper .quickFacts {
       z-index: -1;
       width: 30%;
@@ -1841,19 +2810,49 @@ img {
       position: fixed;
       bottom: 0;
       background-color: darkcyan; }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(9) .wrapper .quickFacts {
+          position: relative;
+          float: none;
+          z-index: initial;
+          width: 100%;
+          height: 250px;
+          padding: 0;
+          font-size: 0.8em; } }
       .projects .project:nth-child(9) .wrapper .quickFacts div {
         width: 80%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(9) .wrapper .quickFacts div {
+            width: 100%; } }
       .projects .project:nth-child(9) .wrapper .quickFacts .heading {
         width: 50%;
         float: left;
         font-weight: bold; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(9) .wrapper .quickFacts .heading {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-110%, -50%);
+            text-align: right; } }
       .projects .project:nth-child(9) .wrapper .quickFacts .answer {
         width: 50%;
         float: right; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(9) .wrapper .quickFacts .answer {
+            line-height: 0.75;
+            float: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            text-align: left; } }
     .projects .project:nth-child(9) .wrapper .description {
       width: 60%;
       padding: 0% 2%;
@@ -1863,10 +2862,33 @@ img {
       right: 0;
       text-align: left;
       color: black; }
+      @media only screen and (max-width: 1024px) {
+        .projects .project:nth-child(9) .wrapper .description {
+          font-size: 0.85em; } }
+      @media only screen and (max-width: 450px) {
+        .projects .project:nth-child(9) .wrapper .description {
+          position: relative;
+          float: none;
+          background-color: seashell;
+          width: 90%;
+          height: auto;
+          padding: 5%; } }
       .projects .project:nth-child(9) .wrapper .description h2 {
         line-height: 0; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(9) .wrapper .description h2 {
+            font-size: 2em;
+            line-height: 1;
+            margin: 0; } }
       .projects .project:nth-child(9) .wrapper .description p {
         -webkit-text-stroke: 0.1px; }
+        @media only screen and (max-width: 450px) {
+          .projects .project:nth-child(9) .wrapper .description p {
+            font-family: Catamaran;
+            font-weight: 100;
+            font-size: 0.85em; } }
+      .projects .project:nth-child(9) .wrapper .description a {
+        color: steelblue; }
 
 .noDelay {
   transition-delay: 0s !important; }

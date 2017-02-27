@@ -50,6 +50,14 @@ html, body {
 	font-size: 100%;
 	font-weight: 300;
 	color: white;
+
+	
+}
+
+body {
+	@media only screen and (max-width: 1024px) {
+		font-size: 60%;
+	}
 }
 
 h1 {
@@ -167,6 +175,11 @@ img {
 	width: 100%;
 
 	opacity: 0;
+
+	@media only screen and (max-width: 450px) {
+		height: 100%;
+		width: auto;
+	}
 }
 
 #bgWork {
@@ -197,6 +210,14 @@ img {
 
 	text-align: center;
 	overflow: hidden;
+
+	@media only screen and (max-width: 450px) {
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+
+		width: 90%;
+	}
 }
 
 .link.clicked {
@@ -210,12 +231,41 @@ img {
 
 	left: 50%;
 	transform: translateX(-50%) scale(0.5);
+
+	@media only screen and (max-width: 450px) {
+		top: 50%;
+		bottom: -200%;
+		left: 50%;
+		transform: translateX(-50%) scale(0.75);
+
+		h1 {
+			font-size: 5em;
+		}
+
+		p {
+			font-size: 2.5em;
+		}
+	}
 }
 
 .midCenter {
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%) scale(0.5);
+
+	@media only screen and (max-width: 450px) {
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%) scale(0.75);
+
+		h1 {
+			font-size: 5em;
+		}
+
+		p {
+			font-size: 2.5em;
+		}
+	}
 }
 
 .name {
@@ -231,6 +281,10 @@ img {
 	transform: translateY(-50%);
 
 	font-size: 2em;
+
+	@media only screen and (max-width: 450px) {
+		font-size: 2.5em;
+	}
 }
 
 .links span {
@@ -324,18 +378,29 @@ img {
 	$dur: 1s, 0.5s;
 	$del: 1.5s, 0s;
 	@include transitions($props, $dur, $del, $sharp-ease-out);
-}
 
-.about p {
-	text-align: left;
-	font-family: Catamaran;
-	font-weight: 100;
-	padding: 0 10%;
-}
+	p {
+		text-align: left;
+		font-family: Catamaran;
+		font-weight: 100;
+		padding: 0 10%;
+	}
 
-.about.active {
-	opacity: 1;
-	transform: translate(-50%, -40%) scaleY(1);
+	&.active {
+		opacity: 1;
+		transform: translate(-50%, -40%) scaleY(1);
+	}
+
+	@media only screen and (max-width: 450px) {
+		font-size: 2em;
+
+		width: 90%;
+		height: auto;
+
+		&.active {
+			transform: translate(-50%, -125%) scaleY(1);
+		}
+	}
 }
 
 // Loop through project tiles to set position and transition delay
@@ -348,6 +413,19 @@ img {
 		$delay: 1500ms + ($row - 1) * 3 * $delayInc + ($col - 1) * $delayInc;
 
 		.projects {
+
+			@media only screen and (max-width: 450px) {
+				margin-top: 33%;
+
+				pointer-events: none;
+				overflow-y: auto;
+
+				height: 6000px;
+
+				&.active {
+					pointer-events: auto;
+				}
+			}
 
 			.project:nth-child(#{ 3 * ($row - 1) + ($col) }) {
 
@@ -365,8 +443,33 @@ img {
 				$props: transform, opacity;
 				@include transitions($props, 1s, $delay, $sharp-ease-out);
 
+				@media only screen and (max-width: 450px) {
+					// Reset a bunch of properties
+					margin: 0;
+					padding: 0;
+					transform: none !important;
+					background-image: none !important;
+					background-color: initial;
+
+					// Start setting stuff
+					position: relative;
+					width: 100%;
+					max-width: 100%;
+					height: 15%;
+					font-size: 2em;
+
+					// Hide when inactive
+					opacity: 0;
+
+					transition-delay: 1.5s;
+				}
+
 				&.active {
 					transform: translate(percentage( (25 + 125 * ($col - 1)) / 100 ), percentage( (25 + 125 * ($row - 1)) / 100)) scale(1);
+
+					@media only screen and (max-width: 450px) {
+						opacity: 1;
+					}
 				}
 
 				&:hover {
@@ -392,6 +495,10 @@ img {
 					transform: translate(150%, 150%) scale(3);
 					background-image: none !important;
 					background-color: seashell;
+
+					@media only screen and (max-width: 450px) {
+						background-color: initial;
+					}
 
 
 					// Restructure project content when clicked
@@ -422,6 +529,10 @@ img {
 					opacity: 0;
 
 					@include transitions(opacity, 0.25s);
+
+					@media only screen and (max-width: 450px) {
+						visibility: hidden;
+					}
 				}
 
 				.title {
@@ -441,6 +552,18 @@ img {
 					opacity: 0;
 
 					@include transitions(opacity, 0.25s);
+
+					@media only screen and (max-width: 450px) {
+						opacity: 1;
+						transform: translate(-50%, -25%); 
+						font-size: 2em;
+						text-shadow: 1px 1px 1px black;
+						-webkit-text-stroke: 1px white;
+
+						position: relative;
+						height: auto;
+						top: 7.5%;
+					}
 				}
 
 				.wrapper {
@@ -454,6 +577,19 @@ img {
 
 					@include transitions(opacity, 0.3s);
 
+					@media only screen and (max-width: 1024px) {
+						font-size: 0.5em;
+					}
+
+					@media only screen and (max-width: 450px) {
+						opacity: 1;
+						font-size: 1.25em;
+
+						position: relative;
+
+						height: 100%;
+					}
+
 					.banner {
 						width: 100%;
 						height: 50%;
@@ -465,6 +601,14 @@ img {
 						-moz-filter: brightness(50%);
 						-o-filter: brightness(50%);
 						filter: brightness(50%);
+
+						@media only screen and (max-width: 450px) {
+							height: 25%;
+							max-height: 150px;
+							background-repeat: no-repeat;
+
+							position: relative;
+						}
 					}
 
 					.quickFacts {
@@ -480,12 +624,28 @@ img {
 
 						background-color: darkcyan;
 
+						@media only screen and (max-width: 450px) {
+							position: relative;
+							float: none;
+							z-index: initial;
+
+							width: 100%;
+							height: 250px;
+							padding: 0;
+
+							font-size: 0.8em;
+						}
+
 						div {
 							width: 80%;
 							position: absolute;
 							top: 50%;
 							left: 50%;
 							transform: translate(-50%, -50%);
+
+							@media only screen and (max-width: 450px) {
+								width: 100%;
+							}
 						}
 
 						.heading {
@@ -493,11 +653,35 @@ img {
 							float: left;
 
 							font-weight: bold;
+
+							@media only screen and (max-width: 450px) {
+								line-height: 0.75;
+								float: none;
+								position: absolute;
+
+								left: 50%;
+								top: 50%;
+
+								transform: translate(-110%, -50%);
+								text-align: right;
+							}
 						}
 
 						.answer {
 							width: 50%;
 							float: right;
+
+							@media only screen and (max-width: 450px) {
+								line-height: 0.75;
+								float: none;
+								position: absolute;
+
+								left: 50%;
+								top: 50%;
+
+								transform: translate(0%, -50%);
+								text-align: left;
+							}
 						}
 					}
 
@@ -513,12 +697,44 @@ img {
 						text-align: left;
 						color: black;
 
+						@media only screen and (max-width: 1024px) {
+							font-size: 0.85em;
+						}
+
+						@media only screen and (max-width: 450px) {
+							position: relative;
+							float: none;
+
+							background-color: seashell;
+
+							width: 90%;
+							height: auto;
+
+							padding: 5%;
+						}
+
 						h2 {
 							line-height: 0;
+
+							@media only screen and (max-width: 450px) {
+								font-size: 2em;
+								line-height: 1;
+								margin: 0;
+							}
 						}
 
 						p {
 							-webkit-text-stroke: 0.1px;
+
+							@media only screen and (max-width: 450px) {
+								font-family: Catamaran;
+								font-weight: 100;
+								font-size: 0.85em;
+							}
+						}
+
+						a {
+							color: steelblue;
 						}
 					}
 				}

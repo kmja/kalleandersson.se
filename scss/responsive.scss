@@ -79,7 +79,12 @@ $sharp-ease-out: cubic-bezier(0.19, 1, 0.22, 1);
 		top: 50%;
 		transform: translate(-50%, -50%);
 
-		width: 100%;
+		width: 90%;
+	}
+
+	// Adjust size of links
+	.links {
+		font-size: 2.5em;
 	}
 
 	// Menu position topCenter is now actually in the bottom
