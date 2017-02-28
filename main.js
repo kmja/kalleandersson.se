@@ -77,16 +77,18 @@ function onStart() {
 		
 	});
 
-	// Hide loader on page load
-	// setTimeout(function() {
-	// 	$(".loader-wrapper-wrapper").css("opacity", "0");
-	// }, 1000);
+	// Hide loader on page load and show menu
+	$(window).on('load', function() {
+			$(".loader-wrapper-wrapper").css("opacity", "0");
+
+			// Show menu
+			setTimeout(function() {
+				menuIn();
+			}, 1000);
+	});
 	
 
-	// Show menu
-	setTimeout(function() {
-		menuIn();
-	}, 2000);
+	
 
 	// Initialize Konami Code easter egg
 	var easterEgg = new Konami(function() {
@@ -166,11 +168,4 @@ function getPosition(el) {
     x: xPosition,
     y: yPosition
   };
-}
-
-// Hide loader on page load
-function hideLoader() {
-	window.onload(function() {
-		$(".loader-wrapper-wrapper").css("opacity", "0");
-	});
 }
