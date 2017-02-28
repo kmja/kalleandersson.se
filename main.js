@@ -77,10 +77,11 @@ function onStart() {
 		
 	});
 
-	// Hide loader
-	setTimeout(function() {
-		$(".loader-wrapper-wrapper").css("opacity", "0");
-	}, 1000);
+	// Hide loader on page load
+	// setTimeout(function() {
+	// 	$(".loader-wrapper-wrapper").css("opacity", "0");
+	// }, 1000);
+	
 
 	// Show menu
 	setTimeout(function() {
@@ -165,4 +166,11 @@ function getPosition(el) {
     x: xPosition,
     y: yPosition
   };
+}
+
+// Hide loader on page load
+function hideLoader() {
+	window.onload(function() {
+		$(".loader-wrapper-wrapper").css("opacity", "0");
+	});
 }
